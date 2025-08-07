@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Classroom</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <!-- Main Container for the entire application -->
+    <div id="app-container" class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-4xl mx-4 my-8 relative overflow-hidden">
+
+        <!-- Login Page -->
+        <div id="login-page" class="flex flex-col items-center justify-center p-8 transition-opacity duration-500 ease-in-out">
+            <h1 class="text-4xl font-bold text-gray-800 mb-6">Welcome!</h1>
+            <p class="text-gray-600 mb-8">Please log in to continue to the CSE courses.</p>
+            <div class="w-full max-w-sm">
+                <input type="text" id="username" placeholder="Username" class="w-full px-4 py-3 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors">
+                <input type="password" id="password" placeholder="Password" class="w-full px-4 py-3 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors">
+                <button id="login-button" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition-colors shadow-md">
+                    Login
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="hidden p-8 transition-opacity duration-500 ease-in-out">
+            <header class="flex justify-between items-center mb-10">
+                <h1 class="text-3xl font-bold text-gray-800">Hello, <span id="user-name-display" class="text-indigo-600"></span>!</h1>
+                <button id="logout-button" class="px-6 py-2 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors shadow-md">
+                    Logout
+                </button>
+            </header>
+            
+            <div id="course-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Course cards will be injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Course Detail Page -->
+        <div id="course-detail-page" class="hidden p-8 transition-opacity duration-500 ease-in-out">
+            <button id="back-button" class="flex items-center text-indigo-600 font-semibold mb-6 hover:text-indigo-800 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Back to Courses
+            </button>
+            
+            <h2 id="course-title" class="text-3xl font-bold text-gray-800 mb-4"></h2>
+            
+            <div id="youtube-link" class="mb-6 rounded-lg overflow-hidden shadow-lg aspect-w-16 aspect-h-9">
+                <!-- YouTube iframe will be injected here -->
+            </div>
+            
+            <div class="border-t border-gray-200 pt-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Comments</h3>
+                <div id="comments-list" class="space-y-4 mb-6">
+                    <!-- Comments will be injected here by JavaScript -->
+                </div>
+                
+                <form id="comment-form" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                    <textarea id="comment-input" rows="2" placeholder="Write a comment..." class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"></textarea>
+                    <button type="submit" class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-md">
+                        Post Comment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
